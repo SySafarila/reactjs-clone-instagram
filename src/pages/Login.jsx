@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../contexts/MyContext";
 
 const Login = () => {
-  const [auth, setAuth] = useContext(AuthContext);
+  const [setAuth] = useContext(AuthContext);
   const [loginButton, setLoginButton] = useState("Log In");
   const login = (event) => {
     event.preventDefault();

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../contexts/MyContext";
 
 const NavbarRight = () => {
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth] = useContext(AuthContext);
   if (auth === true) {
     return (
       <ul className="navbar-nav flex-row justify-content-between">

@@ -3,7 +3,7 @@ import { AuthContext } from "../contexts/MyContext";
 import { Redirect } from "react-router-dom";
 
 const Profile = () => {
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth] = useContext(AuthContext);
   useEffect(() => {
     document.title = "Profile";
   });
