@@ -14,12 +14,15 @@ function Router() {
           <Navbar />
           {/*  */}
           <Switch>
-            <Route path="/about">
+            <Route exact path="/about">
               <h1>About</h1>
             </Route>
-            <Route path="/profile" component={Profile} />
-            <Route path="/login" component={Login} />
-            <Route path="/" component={Home} />
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="*">
+              <h1>404</h1>
+            </Route>
           </Switch>
         </div>
       </BrowserRouter>

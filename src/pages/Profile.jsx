@@ -1,16 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import {
-  AuthContext,
   NameContext,
   UsernameContext,
   PostsContext,
   FollowersContexxt,
   FollowingContext,
 } from "../contexts/MyContext";
-import { Redirect } from "react-router-dom";
+import Middleware from "./Middleware";
 
 const Profile = () => {
-  const [auth] = useContext(AuthContext);
   const [name] = useContext(NameContext);
   const [username] = useContext(UsernameContext);
   const [posts] = useContext(PostsContext);
@@ -19,8 +17,8 @@ const Profile = () => {
   useEffect(() => {
     document.title = "Profile";
   });
-  if (auth === true) {
-    return (
+  return (
+    <Middleware>
       <div className="container py-3">
         <div className="row justify-content-between justify-content-md-center">
           <div className="col-md-2 mr-5">
@@ -68,10 +66,8 @@ const Profile = () => {
         adipisci accusamus quidem ad quos ea error, dolor eos. Fuga obcaecati
         repellat soluta dolorum quam ratione molestias provident sequi aut quia.
       </div>
-    );
-  } else {
-    return <Redirect to="/login" />;
-  }
+    </Middleware>
+  );
 };
 
 export default Profile;
