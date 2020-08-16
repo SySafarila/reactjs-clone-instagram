@@ -1,9 +1,21 @@
 import React, { useContext, useEffect } from "react";
-import { AuthContext } from "../contexts/MyContext";
+import {
+  AuthContext,
+  NameContext,
+  UsernameContext,
+  PostsContext,
+  FollowersContexxt,
+  FollowingContext,
+} from "../contexts/MyContext";
 import { Redirect } from "react-router-dom";
 
 const Profile = () => {
   const [auth] = useContext(AuthContext);
+  const [name] = useContext(NameContext);
+  const [username] = useContext(UsernameContext);
+  const [posts] = useContext(PostsContext);
+  const [followers] = useContext(FollowersContexxt);
+  const [following] = useContext(FollowingContext);
   useEffect(() => {
     document.title = "Profile";
   });
@@ -21,7 +33,7 @@ const Profile = () => {
           </div>
           <div className="col-md-4">
             <div className="d-flex align-items-center">
-              <h2 className="font-weight-light">sysafarila</h2>
+              <h2 className="font-weight-light">{username}</h2>
               <div>
                 <button className="btn btn-sm btn-outline-secondary mx-2">
                   Edit Profile
@@ -33,17 +45,17 @@ const Profile = () => {
             </div>
             <div className="d-flex my-2">
               <div className="mr-3">
-                <span className="font-weight-bold">52</span> Posts
+                <span className="font-weight-bold">{posts}</span> Posts
               </div>
               <div className="mr-3">
-                <span className="font-weight-bold">525</span> Followers
+                <span className="font-weight-bold">{followers}</span> Followers
               </div>
               <div className="mr-3">
-                <span className="font-weight-bold">5</span> Following
+                <span className="font-weight-bold">{following}</span> Following
               </div>
             </div>
             <div>
-              <p className="font-weight-bold m-0">Syahrul Safarila</p>
+              <p className="font-weight-bold m-0">{name}</p>
               <p className="m-0">Manusia Bumi</p>
               <a href="https://github.com/sysafarila">
                 https://github.com/sysafarila
