@@ -64,8 +64,11 @@ const Navbar = () => {
             <li className="nav-item">
               <NavLink
                 to="/"
-                className="nav-link material-icons"
+                className="nav-link material-icons active p-0 pt-1"
                 activeClassName="active"
+                style={{
+                  transform: "rotate(-30deg)",
+                }}
               >
                 send
               </NavLink>
