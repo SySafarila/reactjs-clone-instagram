@@ -9,6 +9,7 @@ const NavbarRight = () => {
       <ul className="navbar-nav flex-row justify-content-between">
         <li className="nav-item">
           <NavLink
+            exact
             to="/"
             className="nav-link material-icons"
             activeClassName="active"
@@ -18,8 +19,9 @@ const NavbarRight = () => {
         </li>
         <li className="nav-item">
           <NavLink
-            to="/"
-            className="nav-link material-icons active p-0 pt-1 px-1"
+            exact
+            to="/direct-message"
+            className="nav-link material-icons p-0 pt-1 px-1"
             activeClassName="active"
             style={{
               transform: "rotate(-30deg)",
@@ -30,7 +32,8 @@ const NavbarRight = () => {
         </li>
         <li className="nav-item">
           <NavLink
-            to="/"
+            exact
+            to="/explore"
             className="nav-link material-icons"
             activeClassName="active"
           >
@@ -39,7 +42,8 @@ const NavbarRight = () => {
         </li>
         <li className="nav-item">
           <NavLink
-            to="/"
+            exact
+            to="/favorite"
             className="nav-link material-icons"
             activeClassName="active"
           >
@@ -48,6 +52,7 @@ const NavbarRight = () => {
         </li>
         <li className="nav-item">
           <NavLink
+            exact
             to="/profile"
             className="nav-link material-icons"
             activeClassName="active"
@@ -61,12 +66,22 @@ const NavbarRight = () => {
     return (
       <ul className="navbar-nav">
         <li className="nav-item">
-          <NavLink to="/login" className="nav-link" activeClassName="active">
+          <NavLink
+            exact
+            to="/login"
+            className="nav-link"
+            activeClassName="active"
+          >
             Login
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/register" className="nav-link" activeClassName="active">
+          <NavLink
+            exact
+            to="/register"
+            className="nav-link"
+            activeClassName="active"
+          >
             Register
           </NavLink>
         </li>
