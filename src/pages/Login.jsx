@@ -1,11 +1,16 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../contexts/MyContext";
 
 const Login = () => {
   const [auth, setAuth] = useContext(AuthContext);
+  const [loginButton, setLoginButton] = useState("Log In");
   const login = (event) => {
     event.preventDefault();
-    setAuth(true);
+    setLoginButton("Please wait...");
+    setTimeout(() => {
+      setAuth(true);
+      setLoginButton("Success");
+    }, 3000);
   };
   useEffect(() => {
     document.title = "Login";
@@ -36,7 +41,7 @@ const Login = () => {
                   className="btn btn-sm btn-block btn-primary"
                   onClick={login}
                 >
-                  Log In
+                  {loginButton}
                 </button>
               </form>
               <hr />
