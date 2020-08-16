@@ -40,6 +40,7 @@ const Login = () => {
                 <button
                   className="btn btn-sm btn-block btn-primary"
                   onClick={login}
+                  disabled={auth ? true : false}
                 >
                   {loginButton}
                 </button>
