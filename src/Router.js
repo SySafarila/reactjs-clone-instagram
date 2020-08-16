@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import { ContextProvider } from "./contexts/MyContext";
+import Home from "./pages/Home";
 
 function Router() {
   return (
@@ -18,9 +19,7 @@ function Router() {
             </Route>
             <Route path="/profile" component={Profile} />
             <Route path="/login" component={Login} />
-            <Route path="/">
-              <h1>Root</h1>
-            </Route>
+            <Route path="/" component={Home} />
           </Switch>
         </div>
       </BrowserRouter>

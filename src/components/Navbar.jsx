@@ -10,18 +10,26 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-white border-bottom">
       <div className="container">
-        <Link className="navbar-brand d-block d-md-none" to="/">
+        <button
+          className="navbar-toggler border-0 material-icons"
+          type="button"
+          onClick={collapsing}
+        >
+          camera_alt
+        </button>
+        <Link className="navbar-brand d-block d-md-none mx-auto" to="/">
           <img
             src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
             alt="Brand"
           />
         </Link>
         <button
-          className="navbar-toggler border-0"
+          className="navbar-toggler border-0 material-icons"
           type="button"
           onClick={collapsing}
         >
-          <span className="navbar-toggler-icon"></span>
+          {/* <span className="navbar-toggler-icon"></span> */}
+          send
         </button>
 
         <div
