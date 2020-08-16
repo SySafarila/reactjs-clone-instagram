@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
+import NavbarRight from "./NavbarRight";
 
 const Navbar = () => {
   const [collapse, setCollapse] = useState(true);
@@ -51,56 +52,7 @@ const Navbar = () => {
             </li>
           </ul>
           {/*  */}
-          <ul className="navbar-nav flex-row justify-content-between">
-            <li className="nav-item">
-              <NavLink
-                to="/"
-                className="nav-link material-icons"
-                activeClassName="active"
-              >
-                home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to="/"
-                className="nav-link material-icons active p-0 pt-1"
-                activeClassName="active"
-                style={{
-                  transform: "rotate(-30deg)",
-                }}
-              >
-                send
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to="/"
-                className="nav-link material-icons"
-                activeClassName="active"
-              >
-                explore
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to="/"
-                className="nav-link material-icons"
-                activeClassName="active"
-              >
-                favorite_border
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to="/profile"
-                className="nav-link material-icons"
-                activeClassName="active"
-              >
-                account_circle
-              </NavLink>
-            </li>
-          </ul>
+          <NavbarRight />
         </div>
       </div>
     </nav>
