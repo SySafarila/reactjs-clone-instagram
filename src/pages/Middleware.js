@@ -3,7 +3,7 @@ import { AuthContext } from "../contexts/MyContext";
 import { Redirect } from "react-router-dom";
 
 const Middleware = (props) => {
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth] = useContext(AuthContext);
   if (auth === true) {
     return <div>{props.children}</div>;
   } else {
