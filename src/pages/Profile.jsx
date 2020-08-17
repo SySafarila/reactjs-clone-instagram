@@ -41,66 +41,75 @@ const Profile = () => {
     setSavedTab(true);
   };
   return (
-    // <Middleware>
-    <div className="container py-3">
-      <div className="row justify-content-between justify-content-md-center">
-        <div className="col-md-2 mr-5">
-          <img
-            src="https://scontent-sin6-2.cdninstagram.com/v/t51.2885-19/s320x320/64991096_350082912348586_6371558304006537216_n.jpg?_nc_ht=scontent-sin6-2.cdninstagram.com&_nc_cat=110&_nc_ohc=tzRbeYk4EAQAX_tkvwb&oh=ec54e260132cb5217356f613a7c64be6&oe=5F63C0EC"
-            alt="Profile"
-            className="rounded-circle"
-            style={{ height: "10rem" }}
-          />
-        </div>
-        <div className="col-md-4">
-          <div className="d-flex align-items-center">
-            <h2 className="font-weight-light">{username}</h2>
+    <Middleware>
+      <div className="container py-3">
+        <div className="row justify-content-between justify-content-md-center">
+          <div className="col-md-2 mr-5">
+            <img
+              src="https://scontent-sin6-2.cdninstagram.com/v/t51.2885-19/s320x320/64991096_350082912348586_6371558304006537216_n.jpg?_nc_ht=scontent-sin6-2.cdninstagram.com&_nc_cat=110&_nc_ohc=tzRbeYk4EAQAX_tkvwb&oh=ec54e260132cb5217356f613a7c64be6&oe=5F63C0EC"
+              alt="Profile"
+              className="rounded-circle"
+              style={{ height: "10rem" }}
+            />
+          </div>
+          <div className="col-md-4">
+            <div className="d-flex align-items-center">
+              <h2 className="font-weight-light">{username}</h2>
+              <div>
+                <button className="btn btn-sm btn-outline-secondary mx-2">
+                  Edit Profile
+                </button>
+              </div>
+              {/* <div> */}
+              <span className="material-icons pb-1">settings</span>
+              {/* </div> */}
+            </div>
+            <div className="d-flex my-2">
+              <div className="mr-3">
+                <span className="font-weight-bold">{posts}</span> Posts
+              </div>
+              <div className="mr-3">
+                <span className="font-weight-bold">{followers}</span> Followers
+              </div>
+              <div className="mr-3">
+                <span className="font-weight-bold">{following}</span> Following
+              </div>
+            </div>
             <div>
-              <button className="btn btn-sm btn-outline-secondary mx-2">
-                Edit Profile
-              </button>
+              <p className="font-weight-bold m-0">{name}</p>
+              <p className="m-0">Manusia Bumi</p>
+              <a href="https://github.com/sysafarila">
+                https://github.com/sysafarila
+              </a>
             </div>
-            {/* <div> */}
-            <span className="material-icons pb-1">settings</span>
-            {/* </div> */}
-          </div>
-          <div className="d-flex my-2">
-            <div className="mr-3">
-              <span className="font-weight-bold">{posts}</span> Posts
-            </div>
-            <div className="mr-3">
-              <span className="font-weight-bold">{followers}</span> Followers
-            </div>
-            <div className="mr-3">
-              <span className="font-weight-bold">{following}</span> Following
-            </div>
-          </div>
-          <div>
-            <p className="font-weight-bold m-0">{name}</p>
-            <p className="m-0">Manusia Bumi</p>
-            <a href="https://github.com/sysafarila">
-              https://github.com/sysafarila
-            </a>
           </div>
         </div>
+        <hr />
+        <div className="d-flex justify-content-center">
+          <h5
+            className={postsTab ? "border-bottom border-primary mx-3" : "mx-3"}
+            onClick={toPost}
+          >
+            Posts
+          </h5>
+          <h5
+            className={videosTab ? "border-bottom border-primary mx-3" : "mx-3"}
+            onClick={toVideos}
+          >
+            Video
+          </h5>
+          <h5
+            className={savedTab ? "border-bottom border-primary mx-3" : "mx-3"}
+            onClick={toSaved}
+          >
+            Saved
+          </h5>
+        </div>
+        {postsTab ? <PostsTab /> : ""}
+        {videosTab ? <VideosTab /> : ""}
+        {savedTab ? <SavedTab /> : ""}
       </div>
-      <hr />
-      <div className="d-flex justify-content-center">
-        <h5 className="mx-3 border-bottom" onClick={toPost}>
-          Posts
-        </h5>
-        <h5 className="mx-3" onClick={toVideos}>
-          Video
-        </h5>
-        <h5 className="mx-3" onClick={toSaved}>
-          Saved
-        </h5>
-      </div>
-      {postsTab ? <PostsTab /> : ""}
-      {videosTab ? <VideosTab /> : ""}
-      {savedTab ? <SavedTab /> : ""}
-    </div>
-    // </Middleware>
+    </Middleware>
   );
 };
 
