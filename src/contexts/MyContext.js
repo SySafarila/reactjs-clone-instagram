@@ -12,7 +12,7 @@ export const ContextProvider = (props) => {
   const [name, setName] = useState("Syahrul Safarila");
   const [username, setUsername] = useState("sysafarila");
   const [posts, setPosts] = useState(50);
-  const [followers, setFollowers] = useState("50K");
+  const [followers, setFollowers] = useState("666K");
   const [following, setFollowing] = useState(2);
   return (
     <AuthContext.Provider value={[auth, setAuth]}>
