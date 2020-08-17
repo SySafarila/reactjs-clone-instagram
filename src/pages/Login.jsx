@@ -10,7 +10,6 @@ const Login = () => {
     setLoginButton("Please wait...");
     setTimeout(() => {
       setAuth(true);
-      setLoginButton("Success");
     }, 3000);
   };
   useEffect(() => {
